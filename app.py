@@ -154,7 +154,8 @@ Be specific, insightful, and concise. Use bullet points where helpful."""
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             "HTTP-Referer": "https://agentic-data-analyst.streamlit.app",
-            "X-Title": "Agentic Data Analyst"
+            "X-Title": "Agentic Data Analyst",
+            "Accept-Charset": "utf-8"
         },
         json={
             "model": "deepseek/deepseek-r1:free",
@@ -167,9 +168,8 @@ Be specific, insightful, and concise. Use bullet points where helpful."""
     if response.status_code != 200:
         raise Exception(f"API error {response.status_code}: {response.text}")
 
-    for line in response.iter_lines():
+    for line in response.iter_lines(decode_unicode=True):
         if line:
-            line = line.decode("utf-8")
             if line.startswith("data: "):
                 data = line[6:]
                 if data.strip() == "[DONE]":
