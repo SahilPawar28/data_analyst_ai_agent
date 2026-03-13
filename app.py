@@ -51,7 +51,7 @@ with st.sidebar:
     st.divider()
     st.info("Works with CSV, Excel, JSON")
     st.markdown("🔑 Get **free** API key:\n[openrouter.ai](https://openrouter.ai)")
-    st.markdown("**Free model used:**\n`deepseek/deepseek-chat-v3-0324:free`")
+    st.markdown("**Free model used:**\n`stepfun/step-3.5-flash:free`")
 
 uploaded = st.file_uploader("Upload your dataset", type=["csv","xlsx","xls","json"])
 
@@ -158,7 +158,7 @@ Be specific, insightful, and concise. Use bullet points where helpful."""
             "Accept-Charset": "utf-8"
         },
         json={
-            "model": "deepseek/deepseek-chat-v3-0324:free",
+            "model": "stepfun/step-3.5-flash:free",
             "messages": [{"role": "user", "content": prompt}],
             "stream": True
         },
@@ -261,7 +261,7 @@ CORRELATIONS:
 
             st.markdown("## 🧠 AI Insight Agent")
             llm_ph = st.empty()
-            llm_ph.markdown('<div class="agent-card agent-running">🔄 <b>🧠 AI Insight Agent</b><br><small>Sending results to DeepSeek V3 for deep analysis…</small></div>', unsafe_allow_html=True)
+            llm_ph.markdown('<div class="agent-card agent-running">🔄 <b>🧠 AI Insight Agent</b><br><small>Sending results to StepFun 3.5 Flash for deep analysis…</small></div>', unsafe_allow_html=True)
 
             insight_box = st.empty()
             full_text = ""
@@ -286,7 +286,7 @@ else:
     ### How it works
     1. **Upload** a CSV, Excel, or JSON file
     2. **5 AI agents** analyse your data in sequence
-    3. **DeepSeek V3** (free via OpenRouter) synthesises everything into deep insights
+    3. **StepFun 3.5 Flash** (free via OpenRouter) synthesises everything into deep insights
 
     👈 Enter your **free** OpenRouter API key in the sidebar to get started.
     """)
@@ -297,4 +297,4 @@ else:
     col4, col5 = st.columns(2)
     with col4: st.info("📊 **Stats Agent**\nDescriptive statistics")
     with col5: st.info("🔗 **Correlation Agent**\nFinds relationships")
-    st.success("🧠 **AI Insight Agent** — DeepSeek V3 (FREE) synthesises all findings into actionable insights")
+    st.success("🧠 **AI Insight Agent** — StepFun 3.5 Flash (FREE) synthesises all findings into actionable insights")
