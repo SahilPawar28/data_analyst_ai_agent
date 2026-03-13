@@ -51,7 +51,7 @@ with st.sidebar:
     st.divider()
     st.info("Works with CSV, Excel, JSON")
     st.markdown("🔑 Get **free** API key:\n[openrouter.ai](https://openrouter.ai)")
-    st.markdown("**Free model used:**\n`meta-llama/llama-3.3-70b-instruct:free`")
+    st.markdown("**Free model used:**\n`deepseek/deepseek-r1:free`")
 
 uploaded = st.file_uploader("Upload your dataset", type=["csv","xlsx","xls","json"])
 
@@ -157,7 +157,7 @@ Be specific, insightful, and concise. Use bullet points where helpful."""
             "X-Title": "Agentic Data Analyst"
         },
         json={
-            "model": "meta-llama/llama-3.3-70b-instruct:free",
+            "model": "deepseek/deepseek-r1:free",
             "messages": [{"role": "user", "content": prompt}],
             "stream": True
         },
@@ -261,7 +261,7 @@ CORRELATIONS:
 
             st.markdown("## 🧠 AI Insight Agent")
             llm_ph = st.empty()
-            llm_ph.markdown('<div class="agent-card agent-running">🔄 <b>🧠 AI Insight Agent</b><br><small>Sending results to Llama 3.3 70B for deep analysis…</small></div>', unsafe_allow_html=True)
+            llm_ph.markdown('<div class="agent-card agent-running">🔄 <b>🧠 AI Insight Agent</b><br><small>Sending results to DeepSeek R1 for deep analysis…</small></div>', unsafe_allow_html=True)
 
             insight_box = st.empty()
             full_text = ""
@@ -286,7 +286,7 @@ else:
     ### How it works
     1. **Upload** a CSV, Excel, or JSON file
     2. **5 AI agents** analyse your data in sequence
-    3. **Llama 3.3 70B** (free via OpenRouter) synthesises everything into deep insights
+    3. **DeepSeek R1** (free via OpenRouter) synthesises everything into deep insights
 
     👈 Enter your **free** OpenRouter API key in the sidebar to get started.
     """)
@@ -297,4 +297,4 @@ else:
     col4, col5 = st.columns(2)
     with col4: st.info("📊 **Stats Agent**\nDescriptive statistics")
     with col5: st.info("🔗 **Correlation Agent**\nFinds relationships")
-    st.success("🧠 **AI Insight Agent** — Llama 3.3 70B (FREE) synthesises all findings into actionable insights")
+    st.success("🧠 **AI Insight Agent** — DeepSeek R1 (FREE) synthesises all findings into actionable insights")
